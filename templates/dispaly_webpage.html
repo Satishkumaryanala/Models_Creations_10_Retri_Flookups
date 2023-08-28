@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/display.css' %}">
+</head>
+<body>
+    <center>
+        <h1 style="color: green;">Webpage data table</h1>
+        <table border="2px" class="abc">
+            <tr class="head">
+                <TH>Primary key</TH>
+                <th>Topic_name</th>
+                <th>Name</th>
+                <th>URL</th>
+            </tr>
+            {% for i in QSWO %}
+                <tr>
+                    <td>{{i.pk}}</td>
+                    <td>{{i.topic_name}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.url}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'display_topic' %}"><h3>Click here to go to Topic data</h3></a>
+        <a href="{% url 'display_Access' %}"><h3>Click here to go to Access_Records data</h3></a>
+    </center>
+</body>
+</html>

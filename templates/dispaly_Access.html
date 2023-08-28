@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/display.css' %}">
+</head>
+<body>
+    <center>
+        <h1 style="color: green;">Access record data</h1>
+        <table border="2px" class="abc">
+            <tr class="head">
+                <th>Primarykey</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Author</th>
+                <th>Email</th>
+            </tr>
+            {% for i in QSAO %}
+                <tr>
+                    <td>{{i.pk}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.author}}</td>
+                    <td>{{i.email}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'display_topic' %}"><h3>Click here to go to Topic data</h3></a>
+        <a href="{% url 'display_webpage' %}"><h3>Click here to go to Webpage data</h3></a>
+    </center>
+</body>
+</html>

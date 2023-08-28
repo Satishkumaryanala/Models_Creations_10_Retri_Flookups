@@ -1,0 +1,13 @@
+.abc
+    {
+        border-collapse: collapse;
+        background: linear-gradient(135deg, black,  red, blue);
+        text-align: center;
+        color: white;
+        width: 50%;
+    }
+
+.head
+{
+    color: rgb(226, 171, 94);
+}
